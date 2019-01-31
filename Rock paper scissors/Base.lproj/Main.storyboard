@@ -18,27 +18,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rock" translatesAutoresizingMaskIntoConstraints="NO" id="VZe-BC-6ht">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuX-Q7-POS" userLabel="paper">
+                                <rect key="frame" x="150" y="183" width="75" height="65"/>
+                                <state key="normal" image="paper"/>
+                                <connections>
+                                    <action selector="choosePaper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f9w-gF-29K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIC-6c-i7j" userLabel="rock">
                                 <rect key="frame" x="150" y="301" width="75" height="65"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scissors" translatesAutoresizingMaskIntoConstraints="NO" id="CoI-rq-WNU">
-                                <rect key="frame" x="150" y="419" width="75" height="65"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paper" translatesAutoresizingMaskIntoConstraints="NO" id="xfr-Y8-czL">
-                                <rect key="frame" x="150" y="188" width="75" height="65"/>
-                            </imageView>
+                                <state key="normal" image="rock"/>
+                                <connections>
+                                    <action selector="chooseRock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eqq-ev-cQY"/>
+                                    <action selector="generateResult:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WGX-im-kAR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bi-Q7-zaH" userLabel="scissor">
+                                <rect key="frame" x="150" y="416" width="75" height="65"/>
+                                <state key="normal" image="scissors"/>
+                                <connections>
+                                    <action selector="chooseScissor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="omd-QO-O9H"/>
+                                    <action selector="generateResult:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xo6-rL-G1j"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wa-7B-XM0">
+                                <rect key="frame" x="54" y="533" width="267" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="VZe-BC-6ht" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0cE-bD-TyC"/>
-                            <constraint firstItem="CoI-rq-WNU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="113-kw-fPs"/>
-                            <constraint firstItem="xfr-Y8-czL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SdH-2k-TPu"/>
-                            <constraint firstItem="VZe-BC-6ht" firstAttribute="top" secondItem="xfr-Y8-czL" secondAttribute="bottom" constant="48" id="c9g-7K-MmU" userLabel="paper.top = paper.bottom + 50"/>
-                            <constraint firstItem="CoI-rq-WNU" firstAttribute="top" secondItem="VZe-BC-6ht" secondAttribute="bottom" constant="53" id="eLX-fK-v4L" userLabel="paper.top = paper.bottom + 50"/>
-                            <constraint firstItem="VZe-BC-6ht" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uc9-4Z-CG5"/>
+                            <constraint firstItem="DIC-6c-i7j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0pf-gH-3d6"/>
+                            <constraint firstItem="8wa-7B-XM0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="54" id="20n-xL-cmt"/>
+                            <constraint firstItem="DIC-6c-i7j" firstAttribute="trailing" secondItem="2Bi-Q7-zaH" secondAttribute="trailing" id="6N7-Wg-Kh4"/>
+                            <constraint firstItem="DIC-6c-i7j" firstAttribute="leading" secondItem="2Bi-Q7-zaH" secondAttribute="leading" id="Nkc-ii-mzn"/>
+                            <constraint firstItem="IuX-Q7-POS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eLc-Pu-NJY"/>
+                            <constraint firstItem="IuX-Q7-POS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="163" id="fVs-Xm-qin"/>
+                            <constraint firstItem="2Bi-Q7-zaH" firstAttribute="top" secondItem="DIC-6c-i7j" secondAttribute="bottom" constant="50" id="i8l-NN-c02"/>
+                            <constraint firstItem="8wa-7B-XM0" firstAttribute="top" secondItem="2Bi-Q7-zaH" secondAttribute="bottom" constant="52" id="iSG-ia-DVc"/>
+                            <constraint firstItem="2Bi-Q7-zaH" firstAttribute="centerX" secondItem="8wa-7B-XM0" secondAttribute="centerX" id="kl0-Wl-eut"/>
+                            <constraint firstItem="IuX-Q7-POS" firstAttribute="leading" secondItem="DIC-6c-i7j" secondAttribute="leading" id="qyk-HP-8dF"/>
+                            <constraint firstItem="IuX-Q7-POS" firstAttribute="trailing" secondItem="DIC-6c-i7j" secondAttribute="trailing" id="wDr-1A-OKD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="paper" destination="IuX-Q7-POS" id="nP4-q6-C23"/>
+                        <outlet property="resultLabel" destination="8wa-7B-XM0" id="s2b-KE-Qdr"/>
+                        <outlet property="rock" destination="DIC-6c-i7j" id="Xeq-eq-CWV"/>
+                        <outlet property="scissor" destination="2Bi-Q7-zaH" id="XOb-Ef-fnQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
