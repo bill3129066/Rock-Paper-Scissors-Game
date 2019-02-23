@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     
     
-    
+    var result: String = ""
     var userChoice: String = ""
     let choice = ["paper", "rock", "scissor"]
     
@@ -29,58 +29,64 @@ class ViewController: UIViewController {
     
     @IBAction func choosePaper(_ sender: Any) {
         userChoice = "paper"
+        print("paper")
         generateResult(Choice: userChoice)
+
+        
     }
     @IBAction func chooseRock(_ sender: Any) {
         userChoice = "rock"
+        print("rock")
         generateResult(Choice: userChoice)
+    
     }
     @IBAction func chooseScissor(_ sender: Any) {
         userChoice = "scissor"
+        print("Scissor")
         generateResult(Choice: userChoice)
+        
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is GameResultViewController
+        {
+            let rc = segue.destination as? GameResultViewController
+            rc?.result = result
+            
+        }
+    }
     
     func generateResult(Choice: String) {
         let computerChoice = choice.randomElement()
-        var result: String = ""
+        print("generate result")
+        
         
         switch (Choice, computerChoice) {
         case _ where Choice == computerChoice:
             result = "The game ended in a draw"
-            print(result)
-            break
         case ("paper", "rock"):
             result = "Paper wins rock!"
-            break
         case ("rock", "scissor"):
             result = "Rock wins scissor!"
-            break
         case ("scissor", "paper"):
             result = "Scissor wins paper!"
-            break
         case ("rock", "paper"):
             result = "Rock loss"
-            break
         case ("scissor", "rock"):
             result = "Scissor loss"
-            break
         case ("paper", "scissor"):
             result = "Paper loss"
-            break
         default:
             result = "Error occurs!"
-            break
-        }
+            
+            
         
-        self.resultLabel.text = result
     }
-    
-    
-    
-    
-    
-    
+        
+        
+        
+        
+    }
     
 
 

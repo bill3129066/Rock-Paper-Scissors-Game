@@ -23,6 +23,7 @@
                                 <state key="normal" image="paper"/>
                                 <connections>
                                     <action selector="choosePaper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f9w-gF-29K"/>
+                                    <segue destination="Fcd-NM-bmi" kind="show" id="uAc-EG-J5U"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIC-6c-i7j" userLabel="rock">
@@ -30,7 +31,7 @@
                                 <state key="normal" image="rock"/>
                                 <connections>
                                     <action selector="chooseRock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eqq-ev-cQY"/>
-                                    <action selector="generateResult:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WGX-im-kAR"/>
+                                    <segue destination="Fcd-NM-bmi" kind="show" id="lfL-g5-yQw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bi-Q7-zaH" userLabel="scissor">
@@ -38,7 +39,7 @@
                                 <state key="normal" image="scissors"/>
                                 <connections>
                                     <action selector="chooseScissor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="omd-QO-O9H"/>
-                                    <action selector="generateResult:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xo6-rL-G1j"/>
+                                    <segue destination="Fcd-NM-bmi" kind="show" id="fMb-Je-Vru"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wa-7B-XM0">
@@ -83,24 +84,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="PaperCoversRock" translatesAutoresizingMaskIntoConstraints="NO" id="Rvv-P2-oKo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PaperCoversRock" translatesAutoresizingMaskIntoConstraints="NO" id="Rvv-P2-oKo">
                                 <rect key="frame" x="68" y="259" width="238" height="148"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er9-zY-ADQ">
-                                <rect key="frame" x="166" y="454" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er9-zY-ADQ">
+                                <rect key="frame" x="16" y="454" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="LVK-ts-99g"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyV-qS-MIZ">
-                                <rect key="frame" x="164" y="492" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyV-qS-MIZ">
+                                <rect key="frame" x="116" y="491" width="142" height="30"/>
+                                <state key="normal" title="Play Again!"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="nSz-gf-gXw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xyV-qS-MIZ" firstAttribute="centerX" secondItem="Rvv-P2-oKo" secondAttribute="centerX" id="E2e-As-bqh"/>
-                            <constraint firstItem="er9-zY-ADQ" firstAttribute="centerX" secondItem="Rvv-P2-oKo" secondAttribute="centerX" id="LvJ-wr-lhM"/>
+                            <constraint firstItem="Jjl-cg-hSJ" firstAttribute="bottom" secondItem="xyV-qS-MIZ" secondAttribute="bottom" constant="146" id="C7C-dz-Eoa"/>
+                            <constraint firstItem="er9-zY-ADQ" firstAttribute="centerX" secondItem="xyV-qS-MIZ" secondAttribute="centerX" id="HHk-Mo-QG3"/>
+                            <constraint firstItem="Rvv-P2-oKo" firstAttribute="centerY" secondItem="Jqh-Mh-Kpp" secondAttribute="centerY" id="Hhp-5o-8xi"/>
+                            <constraint firstItem="Rvv-P2-oKo" firstAttribute="top" secondItem="Jjl-cg-hSJ" secondAttribute="top" constant="239" id="Hpk-bb-axf"/>
+                            <constraint firstItem="Rvv-P2-oKo" firstAttribute="leading" secondItem="Jjl-cg-hSJ" secondAttribute="leading" constant="68" id="Kzm-cc-Xcu"/>
+                            <constraint firstItem="er9-zY-ADQ" firstAttribute="leading" secondItem="Jqh-Mh-Kpp" secondAttribute="leadingMargin" id="LG2-si-kvu"/>
+                            <constraint firstItem="Rvv-P2-oKo" firstAttribute="centerX" secondItem="er9-zY-ADQ" secondAttribute="centerX" id="UUQ-HF-fOS"/>
+                            <constraint firstItem="xyV-qS-MIZ" firstAttribute="top" secondItem="er9-zY-ADQ" secondAttribute="bottom" constant="16" id="g0W-Cb-iWV"/>
+                            <constraint firstItem="er9-zY-ADQ" firstAttribute="top" secondItem="Rvv-P2-oKo" secondAttribute="bottom" constant="47" id="p0R-cv-BI7"/>
+                            <constraint firstItem="er9-zY-ADQ" firstAttribute="trailing" secondItem="Jqh-Mh-Kpp" secondAttribute="trailingMargin" id="raj-Hl-v8W"/>
+                            <constraint firstItem="xyV-qS-MIZ" firstAttribute="leading" secondItem="Jjl-cg-hSJ" secondAttribute="leading" constant="116" id="vEF-LI-Tj8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jjl-cg-hSJ"/>
                     </view>
@@ -112,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKk-40-ylj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968.79999999999995" y="131.78410794602701"/>
+            <point key="canvasLocation" x="988" y="133"/>
         </scene>
     </scenes>
     <resources>
@@ -121,4 +137,7 @@
         <image name="rock" width="75" height="65"/>
         <image name="scissors" width="75" height="65"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fMb-Je-Vru"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -12,13 +12,16 @@ class GameResultViewController: UIViewController {
     @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var resultText: UILabel!
     @IBOutlet weak var previousPage: UIButton!
-    
+
+    var result: String!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        resultText.text = result
+    }
 
     /*
     // MARK: - Navigation
